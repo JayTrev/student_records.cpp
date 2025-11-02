@@ -1,3 +1,5 @@
+
+
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -12,12 +14,12 @@ namespace StudentFunctions {
         SENIOR
     };
 
-    usinf std::string;
-    using GPA - double;
+    using std::string;
+    using GPA = double;
 
-    void formatname(string &name) {
+    void formatName(string &name) {
         std::transform(name.begin(), name.end(), name.begin(),
-        [](unasigned char c){ return std::toupper(c); });
+        [](unsigned char c){ return std::toupper(c); });
     }
     string gradeLevelToString(GradeLevel level) {
         switch (level) {
@@ -29,7 +31,7 @@ namespace StudentFunctions {
         }
     }
 
-    void displayStudentInfo(const string &name, GradeLevel Level, GPA gpa) {
+    void displayStudentInfo(const string &name, GradeLevel level, GPA gpa) {
         std::cout << "\nStudent Record:\n";
         std::cout << "name: " << name << std::endl;
         std::cout << "Grade Level: " << gradeLevelToString(level) << std::endl;
@@ -39,7 +41,7 @@ namespace StudentFunctions {
     }
 }
 
-int man() {
+int main() {
     using namespace std;
     using namespace StudentFunctions;
 
@@ -53,10 +55,10 @@ int man() {
     cout << "Enter grade level (1=Freshman, 2=Sophomore, 3=Junior, 4=Senior): ";
     cin >> gradeInput;
 
-    cout << "Enter GPA";
+    cout << "Enter GPA: ";
     cin >> gpa;
 
-    GradeLevel levvel = static_cast<GradeLevel>(gradeInput);
+    GradeLevel level = static_cast<GradeLevel>(gradeInput);
 
     formatName(name);
 
@@ -64,5 +66,3 @@ int man() {
 
     return 0;
 }
-
-
